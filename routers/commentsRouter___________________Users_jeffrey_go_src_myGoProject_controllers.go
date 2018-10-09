@@ -7,6 +7,14 @@ import (
 
 func init() {
 
+	beego.GlobalControllerRouter["myGoProject/controllers:AccountController"] = append(beego.GlobalControllerRouter["myGoProject/controllers:AccountController"],
+		beego.ControllerComments{
+			Method:           "Register",
+			Router:           `/register`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams:     param.Make(),
+			Params:           nil})
+
 	beego.GlobalControllerRouter["myGoProject/controllers:MainController"] = append(beego.GlobalControllerRouter["myGoProject/controllers:MainController"],
 		beego.ControllerComments{
 			Method:           "Get",
