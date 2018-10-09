@@ -20,6 +20,14 @@
   version = "v1.9.2"
 
 [[projects]]
+  digest = "1:76dc72490af7174349349838f2fe118996381b31ea83243812a97e5a0fd5ed55"
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
+
+[[projects]]
   branch = "master"
   digest = "1:f14d1b50e0075fb00177f12a96dd7addf93d1e2883c25befd17285b779549795"
   name = "github.com/gopherjs/gopherjs"
@@ -64,6 +72,8 @@
   analyzer-version = 1
   input-imports = [
     "github.com/astaxie/beego",
+    "github.com/astaxie/beego/context/param",
+    "github.com/dgrijalva/jwt-go",
     "github.com/smartystreets/goconvey/convey",
   ]
   solver-name = "gps-cdcl"
