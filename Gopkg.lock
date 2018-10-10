@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:8297b73f5c59134c05df9c139966e79df585d869c9b5dd7493abcdfa6b964bf7"
+  digest = "1:914054d7c6a80fc7228527452f75ec2fea496c0531a796d1a44522f41c5adaac"
   name = "github.com/astaxie/beego"
   packages = [
     ".",
@@ -11,6 +11,7 @@
     "context/param",
     "grace",
     "logs",
+    "orm",
     "session",
     "toolbox",
     "utils",
@@ -26,6 +27,14 @@
   pruneopts = "UT"
   revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
   version = "v3.2.0"
+
+[[projects]]
+  digest = "1:850c49ca338a10fec2cb9e78f793043ed23965489d09e30bcc19fe29719da313"
+  name = "github.com/go-sql-driver/mysql"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "a0583e0143b1624142adab07e0e97fe106d99561"
+  version = "v1.3.0"
 
 [[projects]]
   branch = "master"
@@ -73,7 +82,9 @@
   input-imports = [
     "github.com/astaxie/beego",
     "github.com/astaxie/beego/context/param",
+    "github.com/astaxie/beego/orm",
     "github.com/dgrijalva/jwt-go",
+    "github.com/go-sql-driver/mysql",
     "github.com/smartystreets/goconvey/convey",
   ]
   solver-name = "gps-cdcl"

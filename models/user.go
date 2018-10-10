@@ -1,5 +1,7 @@
 package models
 
 type User struct {
-	PhoneNo string
+	Id       int
+	PhoneNo  int
+	Password string
 }
