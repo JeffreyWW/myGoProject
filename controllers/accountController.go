@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	"myGoProject/common"
+	"github.com/go-sql-driver/mysql"
 	"myGoProject/models"
 )
 
@@ -14,24 +14,24 @@ type AccountController struct {
 
 //@router /register [get]
 func (c *AccountController) Register() {
-	//c.Ctx.WriteString("fuck")
-	//
-	c.Abort("Test")
-
-	println("手机号是" + c.GetString("phoneNo"))
+	m := models.Response{}
+	m.Result = map[string]string{}
 	data := []byte(c.GetString("password"))
 	md5Password := fmt.Sprintf("%x", md5.Sum(data))
-	println(md5Password)
 	phoneNo, _ := c.GetInt("phoneNo")
 	o := orm.NewOrm()
 	user := models.User{PhoneNo: phoneNo, Password: md5Password}
-	id, err := o.Insert(&user)
-	println(id, err)
-
-	c.Ctx.WriteString(jwtTool.CreateToken())
-
-}
-
-func (c *AccountController) Login() {
-
+	_, err := o.Insert(&user)
+	dbError, _ := err.(*mysql.MySQLError)
+	if dbError != nil {
+		switch dbError.Number {
+		case 1062:
+			c.Abort(ErrorExistUser)
+			break
+		default:
+			c.Abort(ErrorSystemError)
+			break
+		}
+	}
+	c.Response.Result = &user
 }

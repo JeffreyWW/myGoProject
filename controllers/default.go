@@ -10,7 +10,3 @@ func (c *MainController) Get() {
 	c.Data["Email"] = "astaxie@gmail.com"
 	c.TplName = "index.tpl"
 }
-
-func (c *MainController) NestPrepare() {
-	println("子准备")
-}
