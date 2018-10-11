@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:914054d7c6a80fc7228527452f75ec2fea496c0531a796d1a44522f41c5adaac"
+  digest = "1:1f0838b821fb16d4a3a3f6e12d01f00192b70619b61b08d889d02f65418df01b"
   name = "github.com/astaxie/beego"
   packages = [
     ".",
@@ -15,6 +15,7 @@
     "session",
     "toolbox",
     "utils",
+    "validation",
   ]
   pruneopts = "UT"
   revision = "bf5c5626ab429e66d88602e1ab1ab5fbf4629a01"
@@ -83,6 +84,7 @@
     "github.com/astaxie/beego",
     "github.com/astaxie/beego/context/param",
     "github.com/astaxie/beego/orm",
+    "github.com/astaxie/beego/validation",
     "github.com/dgrijalva/jwt-go",
     "github.com/go-sql-driver/mysql",
     "github.com/smartystreets/goconvey/convey",
