@@ -15,8 +15,8 @@ type BaseController struct {
 }
 
 func (c *BaseController) Finish() {
-	c.Data["json"] = &c.Response
-	c.ServeJSON()
+	//c.Data["json"] = &c.Response
+	//c.ServeJSON()
 }
 
 //func (c *BaseController) Prepare() {

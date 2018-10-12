@@ -23,4 +23,12 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
+	beego.GlobalControllerRouter["myGoProject/controllers:TestController"] = append(beego.GlobalControllerRouter["myGoProject/controllers:TestController"],
+		beego.ControllerComments{
+			Method:           "Test",
+			Router:           `/test`,
+			AllowHTTPMethods: []string{"post"},
+			MethodParams:     param.Make(),
+			Params:           nil})
+
 }
