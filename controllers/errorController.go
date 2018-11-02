@@ -24,3 +24,8 @@ func (c *ErrorController) ErrorSystemError() {
 type AccountError interface {
 	ErrorExistUser()
 }
+
+func (c *ErrorController) Error503() {
+
+	c.TplName = "error/error503.html"
+}
